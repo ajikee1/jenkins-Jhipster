@@ -1,0 +1,13 @@
+
+entity JenkinsJob {
+    jobName String required
+    buildNumber Integer required
+}
+
+entity JiraTicket {
+	jiraTicketName String required
+}
+
+relationship OneToMany {
+    JiraTicket{jiraTicketToJobRel} to JenkinsJob{jiraTicket(jiraTicketName)}
+}

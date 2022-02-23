@@ -1,0 +1,34 @@
+{
+  "applications": "*",
+  "changelogDate": "20220223152415",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "jenkins_job",
+  "fields": [
+    {
+      "fieldName": "jobName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "buildNumber",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "JenkinsJob",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "jiraTicketName",
+      "otherEntityName": "jiraTicket",
+      "otherEntityRelationshipName": "jiraTicketToJobRel",
+      "relationshipName": "jiraTicket",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

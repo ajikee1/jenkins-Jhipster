@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity JenkinsJob.
+    -->
+    <changeSet id="20220223152415-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="jira_ticket_id"
+                                 baseTableName="jenkins_job"
+                                 constraintName="fk_jenkins_job__jira_ticket_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jira_ticket"/>
+    </changeSet>
+</databaseChangeLog>
